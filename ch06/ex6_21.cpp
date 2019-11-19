@@ -1,6 +1,6 @@
 #include <iostream>
 
-int max(const int num, const int *ptrnum)
+int max(const int num, const int *const ptrnum)
 {
     return num > *ptrnum ? num : *ptrnum;
 }
