@@ -196,3 +196,46 @@ decltype(odd) &arrPtr(int i)
 ```cpp
 assert(cin == sought);
 ```
+
+## 练习 6.49
+
+候选函数：1、与被调用函数同名；2、声明在调用点可见
+可行函数：1、形参与实参数量相等；2、形参实参类型相同或者实参类型可转换为形参类型
+
+## 练习 6.50
+
+(a) 调用具有二意性
+(b) `f(int)`
+(c) `f(int, int)`
+(d) `f(double, double)`
+
+## 练习 6.51
+
+上一题正确，此题略去
+
+## 练习 6.52
+
+(a) 3; (b) 4.
+
+## 练习 6.53
+
+(a) 重载
+(b) 重载
+(c) 重复定义
+
+## 练习 6.54
+
+```cpp
+#include <vector>
+
+using std::vector;
+
+int fun(int, int);
+vector<decltype(fun) *> ptrfun;
+```
+
+## 练习 6.55
+
+见练习 6.56
+
+## [练习 6.56](ch06/ex6_56.cpp)
