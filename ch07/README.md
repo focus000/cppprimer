@@ -96,7 +96,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXX
 **优点**：
 
 * 程序的意图更明确
-* 函数的参数可以与成员同名，如 
+* 函数的参数可以与成员同名，如
 
 ```cpp
 void setAddr(const std::string &addr) { this->addr = addr; }
@@ -108,4 +108,53 @@ void setAddr(const std::string &addr) { this->addr = addr; }
 
 ```cpp
 std::string getAddr() const { return this->addr; }
+```
+
+## [练习 7.31](ch07/ex7_31.h)
+
+## [练习 7.32](ch07/ex7_32.h)
+
+## 练习 7.33
+
+```cpp
+Screen::pos Screen::size() const
+{
+    return height * width;
+}
+```
+
+## 练习 7.34
+
+```sh
+dummy_fcn(pos height)
+           ^
+Unknown type name 'pos'
+```
+
+## 练习 7.35
+
+```cpp
+typedef string Type;
+Type initVal(); //use `string`
+class Exercise {
+public:
+    typedef double Type;
+    Type setVal(Type);  //use `double`
+    Type initVal(); //use `double`
+private:
+    int val;
+};
+Type Exercise::setVal(Type parm) {  //first `string`, second `double`
+    val = parm + initVal(); //Exercise::initVal()
+    return val;
+}
+```
+
+change to
+
+```cpp
+Exercise::Type Exercise::setVal(Type parm) {
+    val = parm + initVal();
+    return val;
+}
 ```
