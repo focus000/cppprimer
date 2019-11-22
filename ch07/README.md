@@ -75,3 +75,37 @@ Sales_data() : bookNo(""), units_sold(0), revenue(0.0) {}
 能。`Screen`的成员只有内置类型和`string`，因此能安全地依赖于拷贝和赋值操作的默认版本。管理动态内存的类则不能依赖于拷贝和赋值操作的默认版本，而且也应该尽量使用`string`和`vector`来避免动态管理内存的复杂性。
 
 ## 练习 7.26（[.h](ch07/ex7_26.h)|[.cpp](ch07/ex7_26.cpp)）
+
+## 练习 7.27（[.h](ch07/ex7_27.h) | [.cpp](ch07/ex7_27.cpp)）
+
+## 练习 7.28 & 7.29
+
+```sh
+#with '&'
+XXXXXXXXXXXXXXXXXXXX#XXXX
+XXXXXXXXXXXXXXXXXXXX#XXXX
+                   ^^^
+# without '&'
+XXXXXXXXXXXXXXXXXXXX#XXXX
+XXXXXXXXXXXXXXXXXXXXXXXXX
+                   ^^^
+```
+
+## 练习 7.30
+
+**优点**：
+
+* 程序的意图更明确
+* 函数的参数可以与成员同名，如 
+
+```cpp
+void setAddr(const std::string &addr) { this->addr = addr; }
+```
+
+**缺点**：
+
+* 有时候显得有点多余，如
+
+```cpp
+std::string getAddr() const { return this->addr; }
+```
