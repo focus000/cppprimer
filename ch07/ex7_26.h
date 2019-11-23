@@ -1,5 +1,5 @@
-#ifndef CP5_EX7_21_H
-#define CP5_EX7_21_H
+#ifndef CP5_EX7_26_H
+#define CP5_EX7_26_H
 
 #include <string>
 #include <iostream>
