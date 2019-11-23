@@ -222,3 +222,106 @@ private:
 ## 练习 7.42
 
 参考 练习 7.40
+
+## [练习 7.43](ch07/ex7_43.h)
+
+## 练习 7.44
+
+不合法，因为没有默认构造函数。
+
+## 练习 7.45
+
+合法，因为 C 有默认构造函数。
+
+## 练习 7.46
+
+全错
+
+## 练习 7.47
+
+是否需要从 string 到 Sales_data 的转换依赖于我们对用户使用该转换的看法。在此例中，这种转换可能是对的。null_book 中的 string 可能表示了一个不存在的 ISBN 编号。
+
+优点：
+
+可以抑制构造函数定义的隐式转换
+缺点：
+
+为了转换要显式地使用构造函数
+
+## 练习 7.48
+
+这些定义和是不是 explicit 的无关。
+
+## 练习 7.49
+
+```cpp
+(a) Sales_data &combine(Sales_data); // ok
+(b) Sales_data &combine(Sales_data&); // error C2664: 无法将参数 1 从“std::string”转换为“Sales_data &”	
+(c) Sales_data &combine(const Sales_data&) const; // 该成员函数是const 的，意味着不能改变对象。而 combine函数的本意就是要改变对象
+```
+
+关于(b)，错误的主要原因是non-const ref不能用临时变量过度，事实上声明成`Sales_data &combine(const Sales_data&);`是完全可以的
+
+## [练习 7.50](ch07/ex7_50.h)
+
+## 练习 7.51
+
+假如我们有一个这样的函数：
+
+```cpp
+int getSize(const std::vector<int>&);
+```
+
+如果vector没有将单参数构造函数定义成 explicit 的，我们就可以这样调用：
+
+```cpp
+getSize(34);
+```
+
+很明显这样调用会让人困惑，函数实际上会初始化一个拥有34个元素的vector的临时量，然后返回34。但是这样没有任何意义。而 string 则不同，string 的单参数构造函数的参数是 `const char *` ，因此凡是在需要用到 string 的地方都可以用 `const char *` 来代替（字面值就是 `const char *`）。如：
+
+```cpp
+void print(std::string);
+print("hello world");
+```
+
+## 练习 7.52
+
+Sales_data 类不是聚合类，应该修改成如下：
+
+```cpp
+struct Sales_data {
+    std::string bookNo;
+    unsigned units_sold;
+    double revenue;
+};
+```
+
+## [练习 7.53](ch07/ex7_53.h)
+
+## 练习 7.54
+
+in C++11, constexpr member functions are implicitly const, so the "set_xx" functions, which will modify data members, cannot be declared as constexpr. In C++14, this property no longer holds, so constexpr is suitable.
+
+## 练习 7.55
+
+不是，因为`std::string`不是字面值常量
+我们可以用以下代码做检测：
+
+```cpp
+#include <string>
+#include <iostream>
+#include <type_traits>
+
+struct Data {
+    int ival;
+    std::string s;
+};
+
+int main()
+{
+    std::cout << std::boolalpha;
+    std::cout << std::is_literal_type<Data>::value << std::endl;
+    // output: false
+}
+```
