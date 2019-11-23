@@ -158,3 +158,67 @@ Exercise::Type Exercise::setVal(Type parm) {
     return val;
 }
 ```
+
+## 练习 7.36
+
+fixed
+
+```cpp
+struct X {
+  X (int i, int j): base(i), rem(i % j) { }
+  int base, rem;
+};
+```
+
+## 练习 7.37
+
+```cpp
+Sales_data first_item(cin);   // use Sales_data(std::istream &is) ; its value are up to your input.
+
+int main() {
+  Sales_data next;  // use Sales_data(std::string s = ""); bookNo = "", cnt = 0, revenue = 0.0
+  Sales_data last("9-999-99999-9"); // use Sales_data(std::string s = ""); bookNo = "9-999-99999-9", cnt = 0, revenue = 0.0
+}
+```
+
+## 练习 7.38
+
+```cpp
+Sales_data(std::istream &is = std::cin) { read(is, *this); }
+```
+
+## 练习 7.39
+
+不合法，调用`Sales_data()`会产生二义性调用
+
+## 练习 7.40
+
+```cpp
+#include <iostream>
+#include <string>
+
+class Book 
+{
+public:
+    Book(unsigned isbn, std::string const& name, std::string const& author, std::string const& pubdate)
+        :isbn_(isbn), name_(name), author_(author), pubdate_(pubdate)
+    { }
+
+    explicit Book(std::istream &in) //explicit关键字用来修饰类的构造函数，被修饰的构造函数的类，不能发生相应的隐式类型转换，只能以显示的方式进行类型转换。
+    { 
+        in >> isbn_ >> name_ >> author_ >> pubdate_;
+    }
+
+private:
+    unsigned isbn_;
+    std::string name_;
+    std::string author_;
+    std::string pubdate_;
+};
+```
+
+## 练习 7.41([header](ch07/ex7_41.h)|[cpp](ch07/ex7_41.cpp)|[test](ch07/ex7_41_TEST.cpp))
+
+## 练习 7.42
+
+参考 练习 7.40
