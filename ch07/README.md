@@ -325,3 +325,31 @@ int main()
     // output: false
 }
 ```
+
+## 练习 7.56
+
+A class member that is **associated with the class**, rather than with individual objects of the class type.
+
+each object can no need to store a common data. And if the data is changed, each object can use the new value.
+
+a static data member can have incomplete type.
+we can use a static member as a default argument.
+
+## [练习 7.57](ch07/ex7_57.h)
+
+## 练习 7.58
+
+```cpp
+// example.h
+class Example {
+public:
+    static constexpr double rate = 6.5;
+    static const int vecSize = 20;
+    static vector<double> vec;
+};
+
+// example.C
+#include "example.h"
+constexpr double Example::rate;
+vector<double> Example::vec(Example::vecSize);
+```
