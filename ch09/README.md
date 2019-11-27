@@ -94,3 +94,44 @@ forward_list<float> numbers5(numbers.begin(), numbers.end());   // ok, number5 i
 ```
 
 ## [练习 9.13](ch09/ex9_13.cpp)
+
+## [练习 9.14](ch09/ex9_14.cpp)
+
+## [练习 9.15](ch09/ex9_15.cpp)
+
+## [练习 9.16](ch09/ex9_16.cpp)
+
+## 练习 9.17
+
+- 必须不是无序关联容器
+- 容器以及元素类型必须一致
+- 容器元素类型必须定义了关系运算符
+
+## [练习 9.18](ch09/ex9_18.cpp)
+
+## [练习 9.19](ch09/ex9_19.cpp)
+
+## [练习 9.20](ch09/ex9_20.cpp)
+
+## 练习 9.21
+
+> 第一次调用 insert 会将我们刚刚读入的 string 插入到 iter 所指向的元素之前的位置。insert 返回的迭代器恰好指向这个新元素。我们将此迭代器赋予 iter 并重复循环，读取下一个单词。只要继续有单词读入，每步 while 循环就会将一个新元素插入到 iter 之前，并将 iter 改变为新加入元素的尾置。此元素为（新的）首元素。因此，每步循环将一个元素插入到 list 首元素之前的位置。
+
+## 练习 9.22
+
+- 死循环
+- 迭代器失效
+
+fixed:
+
+```cpp
+while (iter != mid)
+{
+    if (*iter == some_val)
+    {
+        iter = v.insert(iter, 2 * some_val);
+        ++iter;
+    }
+    ++iter;
+}
+```
