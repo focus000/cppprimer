@@ -1,6 +1,9 @@
 # vscode configure
 .vscode/
 
+# clion config
+.idea/
+
 # build files
 build/
 
