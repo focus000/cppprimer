@@ -1,7 +1,7 @@
 <!--
  * @Author: liyunfang
  * @Date: 2019-12-14 14:11:42
- * @LastEditTime : 2019-12-24 00:04:19
+ * @LastEditTime : 2019-12-26 22:37:14
  * @Description: 
  -->
 # 第10章
@@ -76,3 +76,57 @@ Assuming the function to be bound have n parameters, bind take n + 1 parameters.
 ## [练习 10.24](ch10/ex10_24.cpp)
 
 ## [练习 10.25](ch10/ex10_25.cpp)
+
+## 练习 10.26
+
+- back_inserter uses push_back.
+- front_inserter uses push_front.
+- insert uses insert
+
+## [练习 10.27](ch10/ex10_27.cpp)
+
+## [练习 10.28](ch10/ex10_28.cpp)
+
+## [练习 10.29](ch10/ex10_29.cpp)
+
+## [练习 10.30](ch10/ex10_30.cpp)
+
+## [练习 10.31](ch10/ex10_31.cpp)
+
+## 练习 10.32
+
+略
+
+## [练习 10.33](ch10/ex10_33.cpp)
+
+## [练习 10.34-37](ch10/ex10_34_35_36_37.cpp)
+
+## 练习 10.38
+
+- Input iterators : `==`, `!=`, `++`, `*`, `->`
+- Output iterators : `++`, `*`
+- Forward iterators : `==`, `!=`, `++`, `*`, `->`
+- Bidirectional iterators : `==`, `!=`, `++`, `--`, `*`, `->`
+- Random-access iterators : `==`, `!=`, `<`, `<=`, `>`, `>=`, `++`, `--`, `+`, `+=`, `-`, `-=`, `-`(two iterators), `*`, `->`, `iter[n]` == `* (iter + n)`
+
+## 练习 10.39
+
+`list` 双向迭代器
+`vector` 随机访问迭代器
+
+## 练习 10.40
+
+- `copy` : first and second are Input iterators, last is Output iterators.
+- `reverse` : Bidirectional iterators.
+- `unique` : Forward iterators.
+
+## 练习 10.41
+
+```cpp
+replace(beg, end, old_val, new_val); // replace the old_elements in the input range as new_elements.
+replace_if(beg, end, pred, new_val); // replace the elements in the input range which pred is true as new_elements.
+replace_copy(beg, end, dest, old_val, new_val); // copy the new_elements which is old_elements in the input range into dest.
+replace_copy_if(beg, end, dest, pred, new_val); // copy the new_elements which pred is true in the input range into dest.
+```
+
+## [练习 10.42](ch10/ex10_42.cpp)
