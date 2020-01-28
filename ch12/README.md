@@ -1,7 +1,7 @@
 <!--
  * @Author: liyunfang
  * @Date: 2020-01-27 15:04:59
- * @LastEditTime : 2020-01-28 19:37:36
+ * @LastEditTime : 2020-01-29 01:41:21
  * @Description: 
  -->
 # 第12章
@@ -61,3 +61,7 @@ b1 4个元素，b2被销毁
 ## 练习 12.18
 
 release 成员的作用是放弃控制权并返回指针，因为在某一时刻只能有一个 unique_ptr 指向某个对象，unique_ptr 不能被赋值，所以要使用 release 成员将一个 unique_ptr 的指针的所有权传递给另一个 unique_ptr。而 shared_ptr 允许有多个 shared_ptr 指向同一个对象，因此不需要 release 成员。
+
+## 练习 12.21
+
+原来的可读性更好
