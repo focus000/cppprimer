@@ -1,7 +1,7 @@
 /*
  * @Author: liyunfang
  * @Date: 2020-01-27 15:14:25
- * @LastEditTime : 2020-01-29 00:04:17
+ * @LastEditTime : 2020-01-29 01:41:35
  * @Description: 
  */
 #ifndef EX12_02H
@@ -11,9 +11,10 @@
 #include <string>
 #include <memory>
 #include <exception>
-#include "ex12_19.h"
 
 using std::vector, std::string;
+
+class StrBlobPtr;
 
 class StrBlob
 {
@@ -50,8 +51,8 @@ public:
         check(0, "back on empty StrBlob");
         return data->back();
     }
-    auto begin() { return StrBlobPtr(*this); }
-    auto end() { return StrBlobPtr(*this, data->size()); }
+    StrBlobPtr begin();
+    StrBlobPtr end();
 
 private:
     std::shared_ptr<vector<string>> data;
