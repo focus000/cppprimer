@@ -1,7 +1,7 @@
 /*
  * @Author: liyunfang
  * @Date: 2020-01-28 23:05:33
- * @LastEditTime : 2020-01-29 00:00:40
+ * @LastEditTime : 2020-01-29 00:29:23
  * @Description: 
  */
 #ifndef EX12_19H
@@ -19,6 +19,7 @@ class StrBlobPtr
 public:
     StrBlobPtr() : curr(0) {}
     StrBlobPtr(StrBlob &a, size_t sz = 0) : wptr(a.data), curr(sz) { }
+    bool operator!=(const StrBlobPtr& p) { return p.curr != curr; }
     auto &deref() const
     {
         auto p = check(curr, "dereference past end");
