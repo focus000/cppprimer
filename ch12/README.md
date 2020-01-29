@@ -1,7 +1,7 @@
 <!--
  * @Author: liyunfang
  * @Date: 2020-01-27 15:04:59
- * @LastEditTime : 2020-01-29 01:49:59
+ * @LastEditTime : 2020-01-29 15:08:12
  * @Description: 
  -->
 # 第12章
@@ -69,3 +69,9 @@ release 成员的作用是放弃控制权并返回指针，因为在某一时刻
 ## 练习 12.22
 
 skip
+
+## 练习 12.25
+
+```cpp
+delete[] pa;
+```
