@@ -1,7 +1,7 @@
 <!--
  * @Author: liyunfang
  * @Date: 2020-01-27 15:04:59
- * @LastEditTime : 2020-01-29 15:08:12
+ * @LastEditTime : 2020-01-29 20:27:05
  * @Description: 
  -->
 # 第12章
@@ -75,3 +75,11 @@ skip
 ```cpp
 delete[] pa;
 ```
+
+## 练习 12.28
+
+skip
+
+## 练习 12.29
+
+skip
