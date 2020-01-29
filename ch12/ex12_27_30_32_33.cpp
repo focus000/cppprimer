@@ -1,16 +1,16 @@
 /*
  * @Author: liyunfang
  * @Date: 2020-01-29 18:44:54
- * @LastEditTime : 2020-01-29 20:21:35
+ * @LastEditTime : 2020-01-29 20:53:25
  * @Description: 
  */
-#include "ex12_27.h"
+#include "ex12_27_30_32_33.h"
 #include <sstream>
 #include <algorithm>
 
 TextQuery::TextQuery(std::ifstream &ifs)
 {
-    input = std::make_shared<vector<string>>();
+    input = std::make_shared<StrBlob>();
     LineNo lineNo{0};
     for (string line; std::getline(ifs, line); ++lineNo)
     {
@@ -40,6 +40,6 @@ std::ostream &print(std::ostream &out, const QueryResult &qr)
 {
     out << qr.word << " occurs " << qr.nos->size() << (qr.nos->size() > 1 ? " times" : " time") << std::endl;
     for (auto i : *qr.nos)
-        out << "\t(line " << i + 1 << ") " << qr.input->at(i) << std::endl;
+        out << "\t(line " << i + 1 << ") " << StrBlobPtr(*qr.input, i).deref() << std::endl;
     return out;
 }
