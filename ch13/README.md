@@ -1,7 +1,7 @@
 <!--
  * @Author: liyunfang
  * @Date: 2020-01-29 22:21:01
- * @LastEditTime : 2020-01-29 22:48:12
+ * @LastEditTime : 2020-01-29 23:20:05
  * @Description: 
  -->
 # 第13章
@@ -40,3 +40,17 @@ Point foo_bar(Point arg) // 1
     return *heap; // 6
 }
 ```
+
+## 练习 13.6
+
+The copy-assignment operator is function named operator= and takes an argument of the same type as the class.
+
+This operator is used when assignment occurred.
+
+The synthesized copy-assignment operator assigns each nonstatic member of the right-hand object to corresponding member of the left-hand object using the copy-assignment operator for the type of that member.
+
+It is synthesized when the class does not define its own.
+
+## 练习 13.7
+
+In both cases, shallow copy will happen. All pointers point to the same address. The use_count changed the same as 13.3.
