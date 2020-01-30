@@ -84,3 +84,11 @@ When a StrBlobPter object is destroyed the object dynamically allocated will not
 ## 练习 13.16
 
 三个不同的序号，但是与`a.mysn``b.mysn``c.mysn`保持一致
+
+## 练习 13.20
+
+The member (smart pointer and container) will be copied.
+
+## 练习 13.21
+
+As synthesized version meet all requirements for this case, no custom version control memebers need to define
