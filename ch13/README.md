@@ -1,7 +1,7 @@
 <!--
  * @Author: liyunfang
  * @Date: 2020-01-29 22:21:01
- * @LastEditTime : 2020-01-30 16:59:09
+ * @LastEditTime : 2020-01-30 17:13:13
  * @Description: 
  -->
 # 第13章
@@ -68,3 +68,7 @@ The compiler defines a synthesized destructor for any class that does not define
 When a StrBlob object destroyed, the use_count of the dynamic object will decrement. It will be freed if no shared_ptr to that dynamic object.
 
 When a StrBlobPter object is destroyed the object dynamically allocated will not be freed.
+
+## 练习 13.12
+
+3 times. There are accum, item1 and item2.
