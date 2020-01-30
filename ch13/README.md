@@ -1,7 +1,7 @@
 <!--
  * @Author: liyunfang
  * @Date: 2020-01-29 22:21:01
- * @LastEditTime : 2020-01-29 23:20:05
+ * @LastEditTime : 2020-01-30 16:59:09
  * @Description: 
  -->
 # 第13章
@@ -54,3 +54,17 @@ It is synthesized when the class does not define its own.
 ## 练习 13.7
 
 In both cases, shallow copy will happen. All pointers point to the same address. The use_count changed the same as 13.3.
+
+## 练习 13.9
+
+The destructor is a member function with the name of the class prefixed by a tilde(~).
+
+As with the copy constructor and the copy-assignment operator, for some classes, the synthesized destructor is defined to disallow objects of the type from being destoryed. Otherwise, the synthesized destructor has an empty function body.
+
+The compiler defines a synthesized destructor for any class that does not define its own destructor.
+
+## 练习 13.10
+
+When a StrBlob object destroyed, the use_count of the dynamic object will decrement. It will be freed if no shared_ptr to that dynamic object.
+
+When a StrBlobPter object is destroyed the object dynamically allocated will not be freed.
