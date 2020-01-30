@@ -1,7 +1,7 @@
 /*
  * @Author: liyunfang
  * @Date: 2020-01-29 22:48:24
- * @LastEditTime : 2020-01-30 17:02:42
+ * @LastEditTime : 2020-01-30 17:29:30
  * @Description: 
  */
 #ifndef EX13_5_8_11H
@@ -25,7 +25,7 @@ public:
         }
         return *this;
     }
-    ~HasPtr() {}
+    ~HasPtr() { delete ps; }
 
 private:
     string *ps;
