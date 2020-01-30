@@ -1,7 +1,7 @@
 <!--
  * @Author: liyunfang
  * @Date: 2020-01-29 22:21:01
- * @LastEditTime : 2020-01-30 17:13:13
+ * @LastEditTime : 2020-01-30 20:38:33
  * @Description: 
  -->
 # 第13章
@@ -72,3 +72,15 @@ When a StrBlobPter object is destroyed the object dynamically allocated will not
 ## 练习 13.12
 
 3 times. There are accum, item1 and item2.
+
+## 练习 13.14
+
+三个相同的序号
+
+## 练习 13.15
+
+三个不同的序号，但是不与`a.mysn``b.mysn``c.mysn`保持一致
+
+## 练习 13.16
+
+三个不同的序号，但是与`a.mysn``b.mysn``c.mysn`保持一致
