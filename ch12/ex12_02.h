@@ -23,6 +23,12 @@ public:
     typedef vector<string>::size_type size_type;
     StrBlob(): data(std::make_shared<vector<string>>()) { }
     StrBlob(std::initializer_list<string> il): data(std::make_shared<vector<string>>(il)) { }
+    StrBlob(StrBlob const &sb): data(std::make_shared<vector<string>>(*sb.data)) { }
+    StrBlob &operator=(StrBlob const &rhs)
+    {
+        data = std::make_shared<vector<string>>(*rhs.data);
+        return *this;
+    }
     size_type size() const { return data->size(); }
     bool empty() const { return data->empty(); }
     void push_back(string const &t) { data->push_back(t); }
