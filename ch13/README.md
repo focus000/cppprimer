@@ -92,3 +92,13 @@ The member (smart pointer and container) will be copied.
 ## 练习 13.21
 
 As synthesized version meet all requirements for this case, no custom version control memebers need to define
+
+## 练习 13.24
+
+If HasPtr didn't define a destructor, a memory leak would occur, compiler synthesized destructor does not manage dynamic memory. If HasPtr didn't define the copy constructor, we would get pointer-like copy behaviour. The ps pointer would be copied to the left hand side, but ps in the lhs and the rhs would still point to the same string on the heap.
+
+## 练习 13.25
+
+Copy constructor and copy-assignment operator should dynamically allocate memory for its own , rather than share the object with the right hand operand.
+
+StrBlob is using smart pointers which can be managed with synthesized destructor, If an object of StrBlob is out of scope, the destructor for std::shared_ptr will be called automatically to free the memory dynamically allocated when the use_count goes to 0.
