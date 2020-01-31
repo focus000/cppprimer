@@ -12,7 +12,7 @@ public:
     HasPtr &operator=(HasPtr const &rhs)
     {
         ++*rhs.use;
-        if (--*use)
+        if (--*use == 0)
         {
             delete ps;
             delete use;
@@ -24,7 +24,7 @@ public:
     }
     ~HasPtr()
     {
-        if (--*use)
+        if (--*use == 0)
         {
             delete ps;
             delete use;
