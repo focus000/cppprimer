@@ -19,8 +19,9 @@ public:
     {
         if (this != &rhs)
         {
+            auto tp = new string(*rhs.ps);
             delete ps;
-            ps = new string(*rhs.ps);
+            ps = tp;
             i = rhs.i;
         }
         return *this;
