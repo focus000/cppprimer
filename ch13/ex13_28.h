@@ -10,9 +10,10 @@ private:
     int *count;
     TreeNode *left;
     TreeNode *right;
+
 public:
-    TreeNode() : value(), count(new int(1)), left(nullptr), right(nullptr) { }
-    TreeNode(std::string const &str) : value(str), count(new int(1)), left(nullptr), right(nullptr) { }
+    TreeNode() : value(), count(new int(1)), left(nullptr), right(nullptr) {}
+    TreeNode(std::string const &str) : value(str), count(new int(1)), left(nullptr), right(nullptr) {}
     TreeNode(TreeNode const &tn) : value(tn.value), count(tn.count), left(tn.left), right(tn.right) { ++*count; }
     TreeNode &operator=(TreeNode const &rhs)
     {
@@ -44,6 +45,7 @@ class BinStrTree
 {
 private:
     TreeNode *root;
+
 public:
     BinStrTree() : root(new TreeNode()) {}
     BinStrTree(BinStrTree const &bst) : root(new TreeNode(*bst.root)) {}
