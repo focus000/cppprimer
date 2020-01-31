@@ -112,3 +112,7 @@ StrBlob is using smart pointers which can be managed with synthesized destructor
 ## 练习 13.32
 
 Essentially, the specific avoiding memory allocation is the reason why it improve performance. As for the pointerlike version, no dynamic memory allocation anyway. Thus, a specific version for it will not improve the performance.
+
+## 练习 13.33
+
+Because these operations must also update the given Folder. Updating a Folder is a job that the Folder class controls through its addMsg and remMsg members, which will add or remove a pointer to a given Message, respectively.
