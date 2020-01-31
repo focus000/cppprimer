@@ -108,3 +108,7 @@ StrBlob is using smart pointers which can be managed with synthesized destructor
 ## 练习 13.29
 
 `swap(lhs.ps, rhs.ps)`; feed the version : `swap(std::string*, std::string*)` and `swap(lhs.i, rhs.i)`; feed the version : `swap(int, int)`. Both them can't call `swap(HasPtr&, HasPtr&)`. Thus, the calls don't cause a recursion loop.
+
+## 练习 13.32
+
+Essentially, the specific avoiding memory allocation is the reason why it improve performance. As for the pointerlike version, no dynamic memory allocation anyway. Thus, a specific version for it will not improve the performance.
