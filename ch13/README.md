@@ -104,3 +104,7 @@ Copy constructor and copy-assignment operator should dynamically allocate memory
 StrBlob is using smart pointers which can be managed with synthesized destructor, If an object of StrBlob is out of scope, the destructor for std::shared_ptr will be called automatically to free the memory dynamically allocated when the use_count goes to 0.
 
 ## [练习 13.26](ch12/ex12_02.h)
+
+## 练习 13.29
+
+`swap(lhs.ps, rhs.ps)`; feed the version : `swap(std::string*, std::string*)` and `swap(lhs.i, rhs.i)`; feed the version : `swap(int, int)`. Both them can't call `swap(HasPtr&, HasPtr&)`. Thus, the calls don't cause a recursion loop.
