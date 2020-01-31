@@ -18,7 +18,7 @@ private:
 public:
     explicit Message(std::string const &str = "") : contents(str) {}
     Message(Message const &);
-    Message &operator=(Message tmp);
+    Message &operator=(Message const &);
     ~Message();
     void save(Folder &);
     void remove(Folder &);
@@ -27,17 +27,19 @@ public:
 private:
     void add_to_Folders(Message const &);
     void remove_from_Folders();
+    void addFldr(Folder *f) { folders.insert(f); }
+    void remFldr(Folder *f) { folders.erase(f); }
 };
 
 inline void Message::save(Folder &f)
 {
-    folders.insert(&f);
+    addFldr(&f);
     f.addMsg(this);
 }
 
 inline void Message::remove(Folder &f)
 {
-    folders.erase(&f);
+    remFldr(&f);
     f.remMsg(this);
 }
 
@@ -64,24 +66,12 @@ Message::~Message() { remove_from_Folders(); }
 void Message::swap(Message &tmp)
 {
     using std::swap;
-    for (auto &&f : folders)
-    {
-        f->remMsg(this);
-    }
-    for (auto &&f : tmp.folders)
-    {
-        f->remMsg(&tmp);
-    }
+    remove_from_Folders();
+    tmp.remove_from_Folders();
     swap(contents, tmp.contents);
     swap(folders, tmp.folders);
-    for (auto &&f : folders)
-    {
-        f->addMsg(this);
-    }
-    for (auto &&f : tmp.folders)
-    {
-        f->addMsg(&tmp);
-    }
+    add_to_Folders(*this);
+    tmp.add_to_Folders(tmp);
 }
 
 void swap(Message &lhs, Message &rhs)
@@ -89,9 +79,12 @@ void swap(Message &lhs, Message &rhs)
     lhs.swap(rhs);
 }
 
-Message &Message::operator=(Message tmp)
+Message &Message::operator=(Message const &rhs) 
 {
-    this->swap(tmp);
+    remove_from_Folders();
+    contents = rhs.contents;
+    folders = rhs.folders;
+    add_to_Folders(rhs);
     return *this;
 }
 
@@ -101,10 +94,21 @@ private:
     std::set<Message *> messages;
 
 public:
-    Folder() {}
-    ~Folder() {}
-    void addMsg(Message const *);
-    void remMsg(Message const *);
+    Folder() = default;
+    ~Folder() { remove_from_Messages(); }
+    void addMsg(Message *m) { messages.insert(m); }
+    void remMsg(Message *m) { messages.erase(m); }
+
+private:
+    void remove_from_Messages();
 };
+
+void Folder::remove_from_Messages()
+{
+    for (auto &&m : messages)
+    {
+        m->remFldr(this);
+    }
+}
 
 #endif
