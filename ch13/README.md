@@ -122,3 +122,7 @@ Because these operations must also update the given Folder. Updating a Folder is
 ## 练习 13.35
 
 相关`Folder`对象没法同步更新。
+
+## [练习 13.36](ch13/Message.h)
+
+## [练习 13.37](ch13/Message.h)
