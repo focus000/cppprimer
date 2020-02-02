@@ -192,3 +192,7 @@ String s5 = baz(); // second avoided
 ## 练习 13.51
 
 For such case, move semantics is expected rather than copy operation.That's why a unique_ptr may be returned from a function by value. Reference: [StackOverflow - returning unique pointers from functions](http://stackoverflow.com/questions/4316727)
+
+## 练习 13.52
+
+传入左值，调用拷贝构造函数，传入右值，精确匹配移动构造函数
