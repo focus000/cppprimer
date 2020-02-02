@@ -1,5 +1,6 @@
 #include "String.h"
 #include <algorithm>
+#include <iostream>
 
 void swap(String &lhs, String &rhs)
 {
@@ -39,11 +40,13 @@ String::String(char const *c_str)
 String::String(String const &rhs)
 {
     range_initializer(rhs.begin(), rhs.end());
+    std::cout << "copy constructor" << std::endl;
 }
 
 String &String::operator=(String tmp)
 {
     swap(tmp);
+    std::cout << "copy-assignment" << std::endl;
     return *this;
 }
 
