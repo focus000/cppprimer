@@ -7,7 +7,7 @@
 class StrVec
 {
 private:
-    std::allocator<std::string> alloc;
+    static std::allocator<std::string> alloc;
     std::string *elements;
     std::string *first_free;
     std::string *cap;
@@ -20,6 +20,8 @@ public:
     StrVec(std::initializer_list<std::string>);
     StrVec(StrVec const &);
     StrVec &operator=(StrVec const &);
+    StrVec(StrVec &&) noexcept;
+    StrVec &operator=(StrVec &&) noexcept;
     ~StrVec();
     // iterators
     std::string *begin() const { return elements; }
@@ -45,5 +47,7 @@ private:
     std::pair<std::string *, std::string *> alloc_n_copy(std::string const *, std::string const *);
     void range_initialize(std::string const *, std::string const *);
 };
+
+std::allocator<std::string> StrVec::alloc;
 
 #endif

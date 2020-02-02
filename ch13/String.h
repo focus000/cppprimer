@@ -10,7 +10,7 @@ class String
 private:
     char *elements;
     char *end_;
-    std::allocator<char> alloc;
+    static std::allocator<char> alloc;
 
 public:
     // types:
@@ -20,6 +20,7 @@ public:
     String(char const *);
     String(String const &);
     String &operator=(String tmp);
+    String(String &&) noexcept;
     ~String();
     // element access:
     char const *c_str() const { return elements; }
@@ -37,6 +38,8 @@ private:
     void range_initializer(char const *, char const *);
     void free();
 };
+
+std::allocator<char> String::alloc;
 
 inline
 void String::swap(String &rhs)

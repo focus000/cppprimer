@@ -50,6 +50,12 @@ String &String::operator=(String tmp)
     return *this;
 }
 
+String::String(String &&rhs) noexcept
+: elements(rhs.elements), end_(rhs.end_)
+{
+    rhs.elements = rhs.end_ = nullptr;
+}
+
 String::~String()
 {
     free();

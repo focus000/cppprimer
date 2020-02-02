@@ -60,6 +60,25 @@ StrVec &StrVec::operator=(StrVec const &rhs)
     return *this;
 }
 
+StrVec::StrVec(StrVec &&rhs) noexcept
+: elements(rhs.elements), first_free(rhs.first_free), cap(rhs.cap)
+{
+    rhs.elements = rhs.first_free = rhs.cap = nullptr;
+}
+
+StrVec &StrVec::operator=(StrVec &&rhs) noexcept
+{
+    if (this != &rhs)
+    {
+        free();
+        elements = rhs.elements;
+        first_free = rhs.first_free;
+        cap = rhs.cap;
+        rhs.elements = rhs.first_free = rhs.cap;
+    }
+    return *this;
+}
+
 StrVec::~StrVec() { free(); }
 
 void StrVec::reserve(size_type new_cap)
