@@ -1,6 +1,8 @@
 #include "StrVec.h"
 #include <algorithm>
 
+std::allocator<std::string> StrVec::alloc;
+
 void StrVec::free()
 {
     if (elements)

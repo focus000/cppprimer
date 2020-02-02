@@ -48,6 +48,4 @@ private:
     void range_initialize(std::string const *, std::string const *);
 };
 
-std::allocator<std::string> StrVec::alloc;
-
 #endif
