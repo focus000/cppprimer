@@ -174,3 +174,5 @@ int& r2 = vi[0];
 int& r3 = r1;
 int&& r4 = vi[0] * f();
 ```
+
+## [练习 13.47](ch13/String.cpp)
