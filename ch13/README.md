@@ -200,3 +200,10 @@ For such case, move semantics is expected rather than copy operation.That's why 
 ## 练习 13.53
 
 所以为啥时间差10倍啊？重载的更快
+
+## 练习 13.54
+
+```error: ambiguous overload for 'operator=' (operand types are 'HasPtr' and 'std::remove_reference<HasPtr&>::type { aka HasPtr }')
+hp1 = std::move(*pH);
+^
+```
