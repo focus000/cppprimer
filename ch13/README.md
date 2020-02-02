@@ -117,15 +117,15 @@ Essentially, the specific avoiding memory allocation is the reason why it improv
 
 Because these operations must also update the given Folder. Updating a Folder is a job that the Folder class controls through its addMsg and remMsg members, which will add or remove a pointer to a given Message, respectively.
 
-## [练习 13.34](ch13/Message.h)
+## [练习 13.34](Message.h)
 
 ## 练习 13.35
 
 相关`Folder`对象没法同步更新。
 
-## [练习 13.36](ch13/Message.h)
+## [练习 13.36](Message.h)
 
-## [练习 13.37](ch13/Message.h)
+## [练习 13.37](Message.h)
 
 ## 练习 13.38
 
@@ -133,9 +133,9 @@ Because these operations must also update the given Folder. Updating a Folder is
 
 @pezy In this case, swap function is special. It will be clear two Message's folders , then swap members, and added themselves to each folders. But, Message assignment operator just clear itself, and copy the members, and added itself to each folders. The rhs don't need to clear and add to folders. So, if using copy and swap to define, it will be very inefficiency.
 
-## [练习 13.39](ch13/StrVec.h)
+## [练习 13.39](StrVec.h)
 
-## [练习 13.40](ch13/StrVec.h)
+## [练习 13.40](StrVec.h)
 
 ## 练习 13.41
 
@@ -157,7 +157,7 @@ elements   | first_free    cap
     "unconstructed"
 ```
 
-## [练习 13.43](ch13/StrVec.cpp)
+## [练习 13.43](StrVec.cpp)
 
 ## 练习 13.45
 
@@ -175,4 +175,4 @@ int& r3 = r1;
 int&& r4 = vi[0] * f();
 ```
 
-## [练习 13.47](ch13/String.cpp)
+## [练习 13.47](String.cpp)
