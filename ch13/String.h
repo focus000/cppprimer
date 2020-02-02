@@ -45,7 +45,6 @@ void String::swap(String &rhs)
     using std::swap;
     swap(elements, rhs.elements);
     swap(end_, rhs.end_);
-    swap(alloc, rhs.alloc);
 }
 
 #endif
