@@ -188,3 +188,7 @@ String baz()
 
 String s5 = baz(); // second avoided
 ```
+
+## 练习 13.51
+
+For such case, move semantics is expected rather than copy operation.That's why a unique_ptr may be returned from a function by value. Reference: [StackOverflow - returning unique pointers from functions](http://stackoverflow.com/questions/4316727)
