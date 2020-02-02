@@ -176,3 +176,15 @@ int&& r4 = vi[0] * f();
 ```
 
 ## [练习 13.47](String.cpp)
+
+## 练习 13.50
+
+```cpp
+String baz()
+{
+    String ret("world");
+    return ret; // first avoided
+}
+
+String s5 = baz(); // second avoided
+```

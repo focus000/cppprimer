@@ -39,8 +39,6 @@ private:
     void free();
 };
 
-std::allocator<char> String::alloc;
-
 inline
 void String::swap(String &rhs)
 {

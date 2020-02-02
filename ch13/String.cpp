@@ -2,6 +2,8 @@
 #include <algorithm>
 #include <iostream>
 
+std::allocator<char> String::alloc;
+
 void swap(String &lhs, String &rhs)
 {
     lhs.swap(rhs);
@@ -54,6 +56,7 @@ String::String(String &&rhs) noexcept
 : elements(rhs.elements), end_(rhs.end_)
 {
     rhs.elements = rhs.end_ = nullptr;
+    std::cout << "move constructor" << std::endl;
 }
 
 String::~String()
