@@ -163,3 +163,14 @@ elements   | first_free    cap
 
 - 右值引用绑定右值，左值引用绑定左值
 - 右值短暂，左值持久
+
+## 练习 13.46
+
+```cpp
+int f();
+vector<int> vi(100);
+int&& r1 = f();
+int& r2 = vi[0];
+int& r3 = r1;
+int&& r4 = vi[0] * f();
+```
