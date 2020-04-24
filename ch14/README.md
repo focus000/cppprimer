@@ -11,3 +11,11 @@
 但是重载运算符和内置运算符在优先级和结合律上是统一的.
 
 ## 练习 14.2 ([headfile](./Sales_data.h), [cpp](./Sales_data.cpp))
+
+## 练习 14.3
+
+(a) neither. (b) string (c) vector (d) string
+
+## 练习 14.4
+
+nyyynnny
