@@ -63,3 +63,12 @@ String::~String()
 {
     free();
 }
+
+std::ostream &operator<<(std::ostream &os, String const &item)
+{
+    for (auto iter = item.begin(); iter != item.end(); ++iter)
+    {
+        os << *iter;
+    }
+    return os;
+}

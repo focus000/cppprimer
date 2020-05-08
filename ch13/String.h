@@ -3,10 +3,12 @@
 
 #include <memory>
 #include <cstring>
+#include <iostream>
 
 class String
 {
     friend void swap(String &, String &);
+    friend std::ostream &operator<<(std::ostream const &, String const &);
 private:
     char *elements;
     char *end_;
