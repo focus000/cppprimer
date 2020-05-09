@@ -24,4 +24,11 @@ nyyynnny
 
 ## 练习 14.6 (ex14.2)
 
-## 练习 14.7 
+## 练习 14.7
+
+see string class in ch13
+
+## 练习 14.8
+
+see ex14.5
+
